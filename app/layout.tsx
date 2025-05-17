@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {Sora} from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 const sora = Sora({
@@ -35,6 +36,7 @@ export default function RootLayout({
       </head>
       <body className={`${sora.variable} bg-[var(--background)] text-[var(--text)] font-sans overflow-hidden`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
