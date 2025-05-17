@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Poppins } from 'next/font/google'
+import {Sora} from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-  weight: ['300', '400', '600'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-})
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Sneha Michelle | Software Engineer",
   icons: {
@@ -26,9 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} antialiased`}
-      >
+      <head>
+      <link
+          href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={`${sora.variable} bg-[var(--background)] text-[var(--text)] font-sans overflow-hidden`}>
         {children}
       </body>
     </html>
