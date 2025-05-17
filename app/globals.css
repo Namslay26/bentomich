@@ -1,11 +1,16 @@
 @import "tailwindcss";
 
+/* Custom Color Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --drab-dark-brown: #2C2D0Cff;
+  --olive: #7F8F23ff;
+  --drab-dark-brown-2: #393D0Dff;
+  --lion: #B79A62ff;
+  --alabaster: #F2F2F2ff;
 }
 
-@theme inline {
+
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -22,5 +27,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background-color: var(--drab-dark-brown);
+  color: var(--alabaster);
 }
