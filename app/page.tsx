@@ -17,7 +17,7 @@ export default function BentoGrid() {
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-[var(--drab-dark-brown)] text-[var(--lion)] font-sans overflow-hidden">
+    <div className="relative min-h-screen bg-[var(--drab-dark-brown)] text-[var(--lion)] font-sans overflow-x-hidden">
 
       {/* Intro Animation – Profile in center */}
       <AnimatePresence>
@@ -30,7 +30,7 @@ export default function BentoGrid() {
             <motion.img
               src="/me2.jpg"
               alt="Profile"
-              className="rounded-2xl shadow-lg max-w-[50%] max-h-[50%] object-contain"
+              className="rounded-2xl shadow-lg w-[70%] md:max-w-[50%] h-auto object-contain"
               initial={{ scale: 1.8 }}
               animate={{ scale: 1, y: -100 }}
               transition={{ duration: 1.5, ease: 'easeInOut' }}
@@ -43,7 +43,7 @@ export default function BentoGrid() {
       <AnimatePresence>
         {showGrid && (
           <motion.div
-            className="grid grid-cols-1 gap-4 p-4 sm:p-6 md:p-10 min-h-screen font-sans bg-[var(--drab-dark-brown)] text-[var(--lion)]"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 md:p-10 min-h-screen"
             initial="hidden"
             animate="visible"
             variants={{
@@ -56,9 +56,9 @@ export default function BentoGrid() {
             }}
           >
             {/* Intro Section */}
-            <motion.div {...fadeUp} className="p-6 rounded-2xl bg-[var(--lion)] text-[var(--drab-dark-brown)] hover:scale-[1.02] transition-transform duration-200 ease-out">
-              <h1 className="text-3xl md:text-4xl font-bold">Hi, I'm Sneha Michelle.</h1>
-              <p className="mt-2 text-lg md:text-xl">
+            <motion.div {...fadeUp} className="col-span-1 md:col-span-2 p-6 rounded-2xl bg-[var(--lion)] text-[var(--drab-dark-brown)] hover:scale-[1.02] hover:rotate-[1deg] transition-transform duration-200 ease-out">
+              <h1 className="text-2xl md:text-3xl font-bold">Hi, I'm Sneha Michelle.</h1>
+              <p className="mt-2 text-base md:text-lg">
                 I'm a software engineer with a creative soul — passionate about <span className="text-[var(--olive)] font-semibold">NLP</span>, beautiful UIs, and expressive web experiences.<br />
                 I love building tools that feel personal. I'm currently exploring creative NLP, vector embeddings, and visual storytelling using code.
               </p>
@@ -66,13 +66,13 @@ export default function BentoGrid() {
 
             {/* Profile Image */}
             <motion.div {...fadeUp} className="rounded-2xl overflow-hidden shadow-md border-2 border-[var(--olive)] bg-[var(--dun)] hover:scale-[1.02] transition-transform duration-200 ease-out">
-              <img src="/me2.jpg" className="object-cover w-full h-full" alt="Profile" />
+              <img src="/me2.jpg" className="object-cover h-full w-full" alt="Profile" />
             </motion.div>
 
             {/* Featured Project */}
             <motion.div {...fadeUp} className="p-4 rounded-2xl bg-[var(--drab-dark-brown-2)] text-[var(--lion)] hover:scale-[1.02] transition-transform duration-200 ease-out">
               <h2 className="font-semibold text-xl text-[var(--lion)]">Featured Project</h2>
-              <p className="mt-1">Real-time sentiment analyzer using HuggingFace & Streamlit.</p>
+              <p className="mt-1 text-sm md:text-base">Real-time sentiment analyzer using HuggingFace & Streamlit.</p>
             </motion.div>
 
             {/* NLP Playground */}
@@ -99,7 +99,7 @@ export default function BentoGrid() {
             {/* Blog & Writing */}
             <motion.div {...fadeUp} className="p-6 rounded-2xl bg-[var(--olive)] text-[var(--drab-dark-brown)] hover:scale-[1.02] transition-transform duration-200 ease-out">
               <h2 className="font-semibold text-xl">Writing & Thoughts</h2>
-              <ul className="mt-2 space-y-2">
+              <ul className="mt-2 space-y-2 text-sm md:text-base">
                 <li>
                   <a href="#" className="hover:text-[var(--lion)]">Why NLP is a Creative Act</a>
                 </li>
@@ -110,16 +110,15 @@ export default function BentoGrid() {
             </motion.div>
 
             {/* Contact Block */}
-            <motion.div {...fadeUp} className="p-6 rounded-2xl bg-[var(--drab-dark-brown-2)] text-[var(--lion)] hover:scale-[1.01] transition-transform duration-200 ease-out">
+            <motion.div {...fadeUp} className="col-span-1 md:col-span-2 p-6 rounded-2xl bg-[var(--drab-dark-brown-2)] text-[var(--lion)] hover:scale-[1.01] transition-transform duration-200 ease-out">
               <h2 className="text-xl font-semibold">Get in touch</h2>
-              <p className="mt-1">Let’s collaborate or chat about LLMs, creative code, or good coffee.</p>
-              <div className="mt-4 space-x-4">
+              <p className="mt-1 text-sm md:text-base">Let’s collaborate or chat about LLMs, creative code, or good coffee.</p>
+              <div className="mt-4 space-x-4 text-sm">
                 <a href="mailto:michpelled@gmail.com" className="hover:underline">📧 Email</a>
                 <a href="https://github.com/Namslay26" className="hover:underline">💻 GitHub</a>
                 <a href="https://www.linkedin.com/in/sneha-michelle-vimal-1b73b0213/" className="hover:underline">🔗 LinkedIn</a>
               </div>
             </motion.div>
-
           </motion.div>
         )}
       </AnimatePresence>
